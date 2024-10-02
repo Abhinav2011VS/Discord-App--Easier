@@ -3,9 +3,35 @@
     "version": "1.0.0",
     "main": "main.js",
     "scripts": {
-        "start": "electron ."
+      "start": "electron .",
+      "build": "electron-builder",
+      "package": "electron-packager . discord-app --platform=win32 --arch=x64 --out=build/"
     },
     "dependencies": {
-        "electron": "^32.1.2"
+      "electron": "^32.1.2"
+    },
+    "devDependencies": {
+      "electron-builder": "^23.6.0",
+      "electron-packager": "^15.5.0"
+    },
+    "build": {
+      "appId": "net.abhinav.discord-app",
+      "productName": "Discord App",
+      "win": {
+        "target": [
+          {
+            "target": "nsis",
+            "arch": [
+              "x64"
+            ]
+          }
+        ]
+      },
+      "nsis": {
+        "oneClick": false,
+        "perMachine": true,
+        "allowToChangeInstallationDirectory": true
+      }
     }
-}
+  }
+  

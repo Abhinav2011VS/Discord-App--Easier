@@ -1,7 +1,11 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
 
 let mainWindow;
 let splashWindow;
+
+// Path to the icon
+const iconPath = path.join(__dirname, 'assets', 'icon.ico');
 
 function createSplashWindow() {
     splashWindow = new BrowserWindow({
@@ -13,8 +17,7 @@ function createSplashWindow() {
             nodeIntegration: true,
         },
         autoHideMenuBar: true,
-        title: false,
-        titleBarOverlay: true
+        icon: iconPath // Add icon for splash window
     });
 
     splashWindow.loadFile('splash.html');
@@ -38,7 +41,8 @@ function createMainWindow() {
             color: '#2f3241',
             symbolColor: '#74b1be',
             height: 30
-        }
+        },
+        icon: iconPath // Add icon for main window
     });
 
     mainWindow.loadURL('https://discord.com/channels/@me');
