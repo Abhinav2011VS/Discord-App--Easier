@@ -3,15 +3,14 @@ name: Build Electron App
 on:
   push:
     branches:
-      - main  # Change this to your default branch
+      - main
   pull_request:
     branches:
-      - main  # Change this to your default branch
+      - main
 
 jobs:
   build:
-    runs-on: windows-latest  # Use a Windows runner
-
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -19,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Use the Node.js version you prefer
+          node-version: '16'
 
       - name: Cache npm dependencies
         uses: actions/cache@v2
@@ -31,15 +30,20 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        env:
+          CI: false
 
       - name: Build the app
-        run: npm run build  # Ensure you have a build script in package.json
+        run: npm run build
 
       - name: Package the app
-        run: npm run package  # Ensure you have a package script in package.json
+        run: npm run package
+
+      - name: List build output
+        run: dir build
 
       - name: Upload Executable
         uses: actions/upload-artifact@v2
         with:
-          name: discord-app  # Name of the artifact
-          path: build/discord-app-*.exe  # Adjust to match your output path and filename pattern
+          name: discord-app
+          path: build/discord-app-*.exe

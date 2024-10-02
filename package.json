@@ -18,6 +18,7 @@
       "appId": "net.abhinav.discord-app",
       "productName": "Discord App",
       "win": {
+        "icon": "icon.ico",
         "target": [
           {
             "target": "nsis",
