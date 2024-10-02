@@ -40,8 +40,5 @@
       "perMachine": true,
       "allowToChangeInstallationDirectory": true
     }
-  },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
   }
 }

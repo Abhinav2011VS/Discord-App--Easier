@@ -2,7 +2,8 @@ name: Build Electron App
 
 on:
   push:
-    branches: main
+    branches: 
+      - main
 
 jobs:
   build:
@@ -32,14 +33,11 @@ jobs:
       - name: Build the app
         run: npm run make
 
-      - name: Package the app
-        run: npm run package
-
       - name: List build output
-        run: dir build
+        run: dir out/make
 
       - name: Upload Executable
         uses: actions/upload-artifact@v4
         with:
           name: discord-app
-          path: out/make/*.exe
+          path: out/make/*.exe  # Adjust path based on where your .exe is created
