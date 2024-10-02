@@ -43,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: discord-app
-          path: out/make/*.exe  # Adjust path based on where your .exe is created
+          path: /*.exe  # Adjust path based on where your .exe is created
