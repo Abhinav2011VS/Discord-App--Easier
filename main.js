@@ -42,7 +42,8 @@ function createMainWindow() {
             symbolColor: '#74b1be',
             height: 30
         },
-        icon: iconPath // Add icon for main window
+        icon: iconPath, // Add icon for main window
+        maximizable: true
     });
 
     mainWindow.loadURL('https://discord.com/channels/@me');

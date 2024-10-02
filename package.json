@@ -1,6 +1,6 @@
 {
   "name": "discord-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main.js",
   "description": "A Discord client wrapper application",
   "author": "Abhinav VS",
