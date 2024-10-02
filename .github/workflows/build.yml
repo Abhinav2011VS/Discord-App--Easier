@@ -39,7 +39,7 @@ jobs:
         run: dir build
 
       - name: Upload Executable
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: discord-app
           path: build/discord-app-*.exe
