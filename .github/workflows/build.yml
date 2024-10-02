@@ -30,7 +30,7 @@ jobs:
           CI: false
 
       - name: Build the app
-        run: npm run build
+        run: npm run make
 
       - name: Package the app
         run: npm run package
@@ -42,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: discord-app
-          path: build/discord-app-*.exe
+          path: out/make/*.exe
